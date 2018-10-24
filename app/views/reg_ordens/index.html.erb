@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reg Ordens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Numero de orden</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reg_ordens.each do |reg_orden| %>
+      <tr>
+        <td><%= reg_orden.cliente %></td>
+        <td><%= reg_orden.id %></td>
+        <td><%= reg_orden.fecha %></td>
+        <td><%= link_to 'Show', reg_orden %></td>
+        <td><%= link_to 'Edit', edit_reg_orden_path(reg_orden) %></td>
+        <td><%= link_to 'Destroy', reg_orden, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reg Orden', new_reg_orden_path %>
